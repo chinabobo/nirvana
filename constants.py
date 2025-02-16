@@ -1,0 +1,9 @@
+from futu import *
+
+CODE_TENCENT = 'HK.00700'
+CODE_BABA = 'HK.09988'
+CODE_SH_000001 = 'SH.000001'
+CODE_SZ_399001 = 'SZ.399001'
+
+# 定义订阅类型
+SUBSCRIBE_TYPES = [SubType.QUOTE]
