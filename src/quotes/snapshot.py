@@ -1,5 +1,6 @@
 from futu import *
-import constants
+from src import constants
+
 
 def get_snapshot(ctx, code_list):
     try:
