@@ -1,69 +1,70 @@
-# nirvana
+# Nirvana
 
-本项目涵盖了股票行情数据获取、自动化交易、量化策略等内容：
+This project covers stock market data retrieval, automated trading, and quantitative strategies:
 
 ```bash
 nirvana/
 │
-├── LICENSE                      # 项目开源协议文件
-├── README.md                    # 项目说明文档，介绍项目背景、功能、安装等
-├── backtest/                     # 存放回测相关代码
+├── LICENSE                      # Open source license file
+├── README.md                    # Project documentation, including background, functionality, installation, etc.
+├── backtest/                     # Contains backtesting-related code
 │   ├── __init__.py
-│   ├── backtest_engine.py        # 回测引擎
-│   ├── performance_metrics.py    # 性能评估（收益率、夏普比率等）
-│   └── portfolio.py              # 投资组合管理（资产配置等）
+│   ├── backtest_engine.py        # Backtesting engine
+│   ├── performance_metrics.py    # Performance evaluation (e.g., returns, Sharpe ratio)
+│   └── portfolio.py              # Portfolio management (e.g., asset allocation)
 │
-├── config/                       # 存放配置文件
+├── config/                       # Contains configuration files
 │   ├── __init__.py
-│   ├── settings.py               # 全局配置文件（例如API密钥、数据库连接等）
-│   └── strategy_config.py        # 策略配置（例如参数设定）
+│   ├── settings.py               # Global configuration file (e.g., API keys, database connections)
+│   └── strategy_config.py        # Strategy configuration (e.g., parameter settings)
 │
-├── logs/                         # 存放日志文件
-│   └── trading.log               # 交易日志
+├── logs/                         # Contains log files
+│   └── trading.log               # Trading logs
 │
-├── main.py                       # 项目入口，调度各模块
-├── requirements.txt              # 项目依赖库，列出所有第三方依赖
-├── src/                          # 存放项目的主要源代码
-│   ├── constants.py              # 常量文件，存放全局常量
-│   ├── quotes/                   # 股票行情相关代码
+├── main.py                       # Project entry point, orchestrates various modules
+├── requirements.txt              # Project dependencies, lists all third-party libraries
+├── src/                          # Contains the main source code of the project
+│   ├── constants.py              # Constants file, contains global constants
+│   ├── quotes/                   # Stock market data-related code
 │   │   ├── __init__.py
-│   │   ├── monitor.py            # 实时行情监控
-│   │   └── snapshot.py           # 获取股票快照数据
-│   ├── strategies/               # 量化策略相关代码
+│   │   ├── monitor.py            # Real-time market monitoring
+│   │   └── snapshot.py           # Fetch stock snapshot data
+│   ├── strategies/               # Quantitative strategies-related code
 │   │   ├── __init__.py
-│   │   ├── moving_average.py     # 移动平均策略
-│   │   ├── mean_reversion.py     # 均值回归策略
-│   │   └── momentum.py           # 动量策略
-│   └── trading/                  # 自动化交易相关代码
+│   │   ├── moving_average.py     # Moving average strategy
+│   │   ├── mean_reversion.py     # Mean reversion strategy
+│   │   └── momentum.py           # Momentum strategy
+│   └── trading/                  # Automated trading-related code
 │       ├── __init__.py
-│       └── trading.py            # 交易管理和执行（订单执行、风险管理等）
+│       └── trading.py            # Trade management and execution (order execution, risk management, etc.)
 │
-└── tests/                        # 存放单元测试代码
+└── tests/                        # Contains unit tests
     ├── __init__.py
-    ├── test_data.py              # 测试数据加载、清洗等功能
-    ├── test_strategies.py        # 测试量化策略
-    ├── test_trading.py           # 测试交易模块
-    └── test_backtest.py          # 测试回测模块
+    ├── test_data.py              # Tests for data loading, cleaning, etc.
+    ├── test_strategies.py        # Tests for quantitative strategies
+    ├── test_trading.py           # Tests for trading module
+    └── test_backtest.py          # Tests for backtesting module
+
 ```
 
-### 目录结构说明：
+### Directory Structure Explanation:
 
-- **LICENSE**：项目的开源协议，MIT。
-- **README.md**：项目的基本介绍，使用说明、安装指南等。
-- **backtest/**：存放回测相关的模块，包括回测引擎、性能评估等。
-- **config/**：存放项目的配置文件，如全局设置和策略参数等。
-- **logs/**：存放项目运行过程中产生的日志文件，便于调试和追踪。
-- **main.py**：项目入口文件，负责调度各个模块的功能，启动整个项目。
-- **requirements.txt**：列出项目所需的所有依赖库，便于项目的安装和环境配置。
-- **src/**：项目的源代码目录，包含常量文件、股票行情数据、量化策略和自动化交易相关代码。
-  - **constants.py**：存放全局常量，如股票代码、API配置信息等。
-  - **quotes/**：包含实时行情监控和快照获取的功能。
-  - **strategies/**：存放不同的量化交易策略。
-  - **trading/**：管理交易的执行和风险控制。
-- **tests/**：单元测试代码，确保每个模块的功能正常。
-  - **test_data.py**：测试数据模块的功能，如数据加载、清洗等。
-  - **test_strategies.py**：测试量化策略的正确性。
-  - **test_trading.py**：测试交易模块的功能。
-  - **test_backtest.py**：测试回测模块的性能和逻辑。
+- **LICENSE**: The open-source license for the project (MIT).
+- **README.md**: Basic project introduction, usage instructions, installation guide, etc.
+- **backtest/**: Contains modules related to backtesting, including backtest engine, performance evaluation, etc.
+- **config/**: Contains configuration files for the project, such as global settings and strategy parameters.
+- **logs/**: Contains log files generated during project execution, useful for debugging and tracking.
+- **main.py**: The entry point of the project, responsible for orchestrating the functionality of various modules and starting the entire project.
+- **requirements.txt**: Lists all dependencies required for the project, aiding in installation and environment setup.
+- **src/**: The source code directory for the project, including constants, stock market data, quantitative strategies, and automated trading-related code.
+  - **constants.py**: Contains global constants, such as stock codes, API configuration information, etc.
+  - **quotes/**: Includes functionality for real-time market monitoring and snapshot retrieval.
+  - **strategies/**: Contains different quantitative trading strategies.
+  - **trading/**: Manages trade execution and risk control.
+- **tests/**: Unit test code to ensure the functionality of each module.
+  - **test_data.py**: Tests for data modules, such as loading and cleaning.
+  - **test_strategies.py**: Tests the correctness of quantitative strategies.
+  - **test_trading.py**: Tests the functionality of the trading module.
+  - **test_backtest.py**: Tests the performance and logic of the backtesting module.
 
-这个项目结构既简洁又模块化，方便后期维护和扩展，同时也符合常见的量化交易项目组织方式。
+This project structure is both simple and modular, making it easy to maintain and expand in the future. It also follows the typical organization found in quantitative trading projects.
