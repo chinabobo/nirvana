@@ -18,4 +18,14 @@ def get_snapshot(ctx, code_list):
 
 if __name__ == '__main__':
     with (OpenQuoteContext(host='127.0.0.1', port=11111) as quote_ctx):
-         get_snapshot(quote_ctx, [constants.CODE_BABA, constants.CODE_TENCENT])
+         get_snapshot(
+             quote_ctx,[
+                 constants.CODE_ALIBABA,
+                 constants.CODE_TENCENT,
+                 constants.CODE_YS,
+                 constants.CODE_HDL,
+                 constants.CODE_SZINT,
+                 constants.CODE_CNRAIL,
+                 constants.CODE_MT,
+             ]
+         )
